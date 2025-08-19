@@ -1,0 +1,3 @@
+C:/Users/Haghjoo/CLionProjects/newww/cmake-build-debug/CMakeFiles/newww.dir
+C:/Users/Haghjoo/CLionProjects/newww/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Haghjoo/CLionProjects/newww/cmake-build-debug/CMakeFiles/rebuild_cache.dir
