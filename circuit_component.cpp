@@ -174,21 +174,23 @@ void SubcircuitHC::loadInternal() {
     }
 
     std::string line;
-    while (file) {
-        if (!std::getline(file, line)) break;
+    while (std::getline(file, line)) {
         if (line.empty() || line[0] == '*') continue;
         std::istringstream iss(line);
         std::string type, name, n1, n2, valStr;
         iss >> type >> name >> n1 >> n2;
 
         double val = 0.0;
-        if (iss >> valStr) {
+        if (!(iss >> valStr)) {
+            val = 0.0;
+        } else {
             try {
                 val = std::stod(valStr);
             } catch (...) {
                 val = 0.0;
             }
         }
+
 
         if (type == "R") internalComponents.push_back(std::make_unique<Resistor>(name, n1, n2, val));
         else if (type == "C") internalComponents.push_back(std::make_unique<Capacitor>(name, n1, n2, val));
